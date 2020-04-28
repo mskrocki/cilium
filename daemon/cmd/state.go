@@ -93,7 +93,7 @@ func (d *Daemon) validateEndpoint(ep *endpoint.Endpoint) (valid bool, err error)
 			}
 
 			ep.UpdateVisibilityPolicy(func(ns, podName string) (proxyVisibility string, err error) {
-				_, _, annotations, err := d.fetchK8sLabelsAndAnnotations(ns, podName)
+				_, _, _, annotations, err := d.fetchK8sLabelsAndAnnotations(ns, podName)
 				if err != nil {
 					return "", err
 				}
